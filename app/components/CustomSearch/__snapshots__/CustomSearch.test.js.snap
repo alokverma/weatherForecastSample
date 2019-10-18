@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomSearch should render custom search component 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "borderRadius": 5,
+      "elevation": 5,
+      "flexDirection": "row",
+      "height": 48,
+      "justifyContent": "center",
+      "margin": 4,
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    keyboardShouldPersistTaps={false}
+    onChangeText={[Function]}
+    placeholder="Search"
+    placeholderTextColor="gray"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "white",
+        "flex": 1,
+        "fontSize": 18,
+        "height": 48,
+        "paddingLeft": 10,
+      }
+    }
+    underlineColorAndroid="white"
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "elevation": 20,
+        "height": 48,
+        "justifyContent": "center",
+        "width": 56,
+      }
+    }
+  />
+</View>
+`;
