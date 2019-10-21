@@ -31,7 +31,8 @@ const Loading = ({size, height, color, text}) => (
 Loading.propTypes = {
   size: PropTypes.string,
   height: PropTypes.number,
-  color: PropTypes.string
+  color: PropTypes.string,
+  text: PropTypes.string
 }
 
 Loading.defaultProps = {

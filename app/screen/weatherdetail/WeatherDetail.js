@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {View, FlatList} from 'react-native';
+import {SafeAreaView, View, FlatList} from 'react-native';
 import {THEMES} from '../../utils/constants'
 const {colors} = THEMES.weatherDefaultTheme;
 import LoadingOverlay from '../../components/LodingOverlay'
@@ -7,7 +7,8 @@ import CustomSearch from '../../components/CustomSearch';
 import ListItem from '../../components/ListItem';
 import s from './styles'
 import { connect } from 'react-redux'
-import {fetchWeather} from '../../action/WeatherAction'
+import { fetchWeather,fetchWeahterFromStorage } from '../../action/WeatherAction'
+import NetInfo from "@react-native-community/netinfo"
 
 class WeatherScreen extends Component{
 
@@ -19,12 +20,14 @@ class WeatherScreen extends Component{
       const {searchValue} = this.state;
       console.log(searchValue)
         return (
-          <View style={s.container}>
+         
+          <View style = {s.container}>
+             <SafeAreaView >
               <CustomSearch
                 value = {searchValue}
                 onChange = {(value)=>this.handleChange(value)}
                 onButtonPress = {this.onButtonPressed}></CustomSearch>
-                
+                </SafeAreaView>
               <FlatList 
                   data = { this.props.weatherData.data }
                   keyExtractor={item => item.dt}
@@ -40,7 +43,8 @@ class WeatherScreen extends Component{
               {this.props.weatherData.isLoading && (
                   <View style={s.loading}>
                     <LoadingOverlay
-                    color = {colors.raspberry}
+                    height = {12}
+                    color = {colors.white}
                     text = {'Please wait..'}>
                     </LoadingOverlay>
                     </View>
@@ -54,7 +58,14 @@ class WeatherScreen extends Component{
             alert('please enter valid zip code')
             return
         }
-        this.props.fetchWeathers()
+        NetInfo.fetch().then(state => {
+          if(state.isConnected){
+            this.props.fetchWeathers(this.state.searchValue)
+          }else{
+            this.props.fetchWeathersOffline(this.state.searchValue)
+          }
+        })
+       
       }
 
       handleChange = (values)=>{
@@ -69,7 +80,15 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return { fetchWeathers: () => dispatch(fetchWeather()) } 
+  return { 
+    fetchWeathers: (seachVlaue) => { 
+      dispatch(fetchWeather(seachVlaue)) 
+    },
+    fetchWeathersOffline : (seachVlaue) => {
+      dispatch(fetchWeahterFromStorage(seachVlaue)) 
+    }
+
+}
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(WeatherScreen)

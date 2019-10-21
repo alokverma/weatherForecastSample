@@ -14,7 +14,9 @@ const CustomSearch = (props) => {
         value={value}
         keyboardShouldPersistTaps={false}
         underlineColorAndroid="white"
+        keyboardType='numeric'
         placeholderTextColor="gray"
+        maxLength={5}
         onChangeText={(value)=>onChange(value)}
         placeholder="Search" />
       {!!value && value.length !== 0 ? (

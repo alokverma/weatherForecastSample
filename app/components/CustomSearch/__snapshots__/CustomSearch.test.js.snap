@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CustomSearch should render custom search component 1`] = `
+exports[`CustomSearch checking SnapShopt should render custom search component 1`] = `
 <View
   style={
     Object {

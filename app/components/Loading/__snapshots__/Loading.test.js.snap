@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading should render list Loading component 1`] = `
+exports[`Loading checkingSnapShot should render list Loading component 1`] = `
 <View
   style={
     Object {
