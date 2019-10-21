@@ -9,8 +9,8 @@
 import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import  { createStackNavigator } from 'react-navigation-stack';
-import SplashScreen from './app/screen/splash/SplashScreen';
-import WeatherScreen from './app/screen/weatherdetail/WeatherDetail';
+import SplashScreen from './src/screen/splash/SplashScreen';
+import WeatherScreen from './src/screen/weatherdetail/WeatherDetail';
 
 const navigator = createSwitchNavigator(
   {
