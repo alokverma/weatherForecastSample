@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SplashScreen checking SnapShopt should render splash screen  component 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../src/assets/splash.png",
+      }
+    }
+    style={
+      Object {
+        "height": 300,
+        "width": 300,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "black",
+        "fontSize": 40,
+        "paddingBottom": 0,
+        "textAlign": "center",
+      }
+    }
+  >
+    WEATHER
+  </Text>
+</View>
+`;

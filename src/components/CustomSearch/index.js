@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {THEMES} from '../../utils/constants'
 const {colors} = THEMES.weatherDefaultTheme;
 
-Icon.loadFont();
+//Icon.loadFont();
 
 const CustomSearch = (props) => {
   const {value, onChange, onButtonPress} = props

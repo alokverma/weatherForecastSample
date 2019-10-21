@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import CustomSearch from './index'
-import {checkProps} from '../../utils/index'
+import CustomSearch from '../components/CustomSearch/index'
+import {checkProps} from '../utils/index'
 
 
 describe('CustomSearch',()=>{

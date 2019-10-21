@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import Loading from './index';
-import {checkProps} from '../../utils/index'
+import Loading from '../components/Loading/index';
+import {checkProps} from '../utils/index'
 
 
 describe('Loading',()=>{

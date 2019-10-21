@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import LoadingOverlay from './index'
+import LoadingOverlay from '../components/LodingOverlay/index'
 
 describe('LoadingOverlay',()=>{
     it('should render list LoadingOverlay component',()=>{
