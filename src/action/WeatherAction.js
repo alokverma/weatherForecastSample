@@ -32,6 +32,13 @@ export const fetchWeather = (zipCode) => {
         };
 }
 
+export const fetchWeateherFromServer = async() =>{
+    let response = await axios.get('https://samples.openweathermap.org/data/2.5/forecast?zip=12223&appid=b6907d289e10d714a6e88b30761fae22')         
+    const list = response.data.list;
+    return list;
+
+}
+
 export const fetchWeahterFromStorage = (zipCode) => {
     return async dispatch =>{
         let code = zipCode

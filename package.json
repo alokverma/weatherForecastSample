@@ -49,6 +49,9 @@
     "testEnvironment": "enzyme",
     "testEnvironmentOptions": {
       "enzymeAdapter": "react16"
-    }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base)/"
+     ]
   }
 }
