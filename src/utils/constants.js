@@ -1,6 +1,5 @@
 import {Platform} from 'react-native'
 const iOS = Platform.OS === 'ios'
-
 export const THEMES = {
   weatherDefaultTheme: {
     name: 'Weather default theme',
